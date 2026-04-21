@@ -1,4 +1,4 @@
-# Equipo: Informaticos 402 
+# Equipo: Informáticos 402 
 
 Este repositorio contiene la solución desarrollada por nuestro equipo para el **WeirdUI Hackathon**. Nuestra propuesta se enfoca en una gestión eficiente y visualmente disruptiva para la cava de un restaurante.
 
