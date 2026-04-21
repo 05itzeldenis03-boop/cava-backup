@@ -1,22 +1,15 @@
-# Repositorio plantilla para WeirdUI[1]
+# Equipo: Informaticos 402 
 
-Este repositorio será usado única y exclusivamente para albergar el código de una solución para WeirdUI[1].
+Este repositorio contiene la solución desarrollada por nuestro equipo para el **WeirdUI Hackathon**. Nuestra propuesta se enfoca en una gestión eficiente y visualmente disruptiva para la cava de un restaurante.
 
-> [!IMPORTANT]
-> Tu repositorio y equipo son privados. Solo son accesibles para tu equipo y los jueces, con los últimos solo teniendo acceso de lectura.
-> Si tu equipo lo desea, el repo será hecho público y/o con posibilidad de ser _forkeado_ al finalizar el hackathon.
+## 👥 Integrantes
+*   **Itzel Denis Santiago Villamar** - e5224@tuvch.mx
+*   **Eric Ebed Merida Morales** - e5196@tuvch.mx
+*   **Irving Israel Mandujano Rangel** - e5254@tuvch.mx
 
-La estructura del repositorio deberá mantenerse de la siguiente forma: 
-- `/solution` almacenará el código fuente de la solución.
-- `INSTALL.md` contendrá la información de instalación, ejecución y/o despliegue de la solución.
-- `REPORT.md` contendrá el reporte del equipo explicando la solución y la metodología usada. 
-- `README.md` (este archivo) debe incluir el nombre del equipo, integrantes y correo registrado.
+## 🚀 Fase actual: Día 1 - Arquitectura y Diseño
+Siguiendo las reglas del hackathon, hemos definido la base técnica de nuestro proyecto:
+*   **Lenguaje:** Python 3.14
+*   **Librería de UI:** Textual
+*   **Almacenamiento:** SQLite
 
-# Mecánica de Tiempo
-
-- El tiempo de cada fasé es de 10:00 a 20:00 hrs. Después y antes de eso no podrás hacer modificaciones a tu repositorio (quedará en modo de solo lectura).
-- Recibirás respuesta sobre si tu equipo pasa a la siguiente ronda antes de las 9:30 AM del día siguiente.
-
-Reglas sobre el hackathon se encuentran disponibles en [compufest.cc/hackathon](compufest.cc/hackathon)
-
-Mucha suerte, y el primero a la llave!
