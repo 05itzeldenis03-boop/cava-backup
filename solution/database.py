@@ -1,0 +1,55 @@
+import sqlite3
+from models import Vino, Proveedor, Inventario, Movimiento
+
+class Database:
+    def __init__(self, db_path="cava.db"):
+        self.conn = sqlite3.connect(db_path)
+        self.conn.row_factory = sqlite3.Row
+        self._crear_tablas()
+
+    def _crear_tablas(self):
+        self.conn.execute("""
+            CREATE TABLE IF NOT EXISTS vinos (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                nombre TEXT NOT NULL,
+                tipo TEXT NOT NULL,
+                anio INTEGER,
+                region TEXT,
+                bodega TEXT,
+                precio_copa REAL,
+                precio_botella REAL   
+                          )
+            """)
+        
+            
+        self.conn.execute("""
+            CREATE TABLE IF NOT EXISTS proveedores (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                nombre TEXT NOT NULL,
+                contacto TEXT,
+                email TEXT,
+                telefono TEXT   
+                          )
+            """)
+    
+        self.conn.execute("""
+            CREATE TABLE IF NOT EXISTS inventario(
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                id_vino INTEGER,
+                id_proveedor INTEGER,
+                cantidad INTEGER,
+                ubicacion TEXT   
+                          )
+            """)
+    
+        self.conn.execute ("""
+            CREATE TABLE IF NOT EXISTS movimientos (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                id_vino INTEGER,
+                tipo TEXT,
+                cantidad INTEGER,
+                notas TEXT
+                          )
+            """)
+    
+        self.conn.commit()
