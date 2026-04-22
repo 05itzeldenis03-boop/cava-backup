@@ -3,6 +3,7 @@ from textual.widgets import Header, Footer
 from screens.vinos import VinosScreen
 from screens.inventario import InventarioScreen
 from screens.movimientos import MovimientosScreen
+from screens.proveedores import ProveedoresScreen
 
 class CavaApp(App):
 
@@ -16,6 +17,7 @@ class CavaApp(App):
         ("v", "ir_vinos", "Vinos"),
         ("i", "ir_inventario", "Inventario"),
         ("m", "ir_movimientos", "Movimientos"),
+        ("p", "ir_proveedores", "Proveedores"),
         ("q", "quit", "Salir"),
     ]
 
@@ -31,6 +33,9 @@ class CavaApp(App):
 
     def action_ir_movimientos(self) -> None:
         self.push_screen(MovimientosScreen())
+
+    def action_ir_proveedores(self) -> None:
+        self.push_screen(ProveedoresScreen())
 
 if __name__ == "__main__":
     app = CavaApp()

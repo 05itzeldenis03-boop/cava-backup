@@ -91,3 +91,13 @@ class Database:
             JOIN vinos v ON m.id_vino = v.id
         """)
         return rows
+    
+    def get_proveedores(self):
+        rows = self.conn.execute("SELECT * FROM proveedores").fetchall()
+        return [Proveedor(
+            id=r["id"],
+            nombre=r["nombre"],
+            contanto=r["contacto"],
+            email=r["email"],
+            telefono=r["telefono"]
+        )for r in rows]
