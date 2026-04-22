@@ -66,3 +66,12 @@ class Database:
             precio_copa=r["precio_copa"],
             precio_botella=r["precio_botella"]
     ) for r in rows]
+
+    def insertar_vino(self, v: Vino):
+        self.conn.execute(
+        """INSERT INTO vinos 
+        (nombre, tipo, anio, region, bodega, precio_copa, precio_botella)
+        VALUES (?, ?, ?, ?, ?, ?, ?)""",
+        (v.nombre, v.tipo, v.anio, v.region, v.bodega, v.precio_copa, v.precio_botella)
+    )
+        self.conn.commit()
