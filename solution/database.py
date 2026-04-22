@@ -101,3 +101,12 @@ class Database:
             email=r["email"],
             telefono=r["telefono"]
         )for r in rows]
+    
+    def insertar_inventario(self, inv: Inventario):
+        self.conn.execute(
+            """INSERT INTO inventario
+            (id_vino, id_proveedor, cantidad, ubicacion)
+            VALUES (?, ?, ?, ?)""",
+            (inv.id_vino, inv.id_proveedor, inv.cantidad, inv.ubicacion)
+        )
+        self.conn.commit()
