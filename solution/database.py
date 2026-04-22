@@ -83,3 +83,11 @@ class Database:
             JOIN vinos v ON i.id_vino = v.id
         """).fetchall()
         return rows
+    
+    def get_movimientos(self):
+        rows = self.conn.execute("""
+            SELECT v.nombre, m.tipo, m.cantidad, m.notas
+            FROM movimientos m
+            JOIN vinos v ON m.id_vino = v.id
+        """)
+        return rows
