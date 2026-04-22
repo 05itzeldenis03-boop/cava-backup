@@ -75,3 +75,11 @@ class Database:
         (v.nombre, v.tipo, v.anio, v.region, v.bodega, v.precio_copa, v.precio_botella)
     )
         self.conn.commit()
+
+    def get_inventario(self):
+        rows = self.conn.execute("""
+            SELECT v.nombre, v.tipo, i.cantidad, i.ubicacion
+            FROM inventario i
+            JOIN vinos v ON i.id_vino = v.id
+        """).fetchall()
+        return rows

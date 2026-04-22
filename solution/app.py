@@ -1,6 +1,7 @@
 from textual.app import App, ComposeResult
 from textual.widgets import Header, Footer
 from screens.vinos import VinosScreen
+from screens.inventario import InventarioScreen
 
 class CavaApp(App):
 
@@ -12,6 +13,7 @@ class CavaApp(App):
     """
     BINDINGS = [
         ("v", "ir_vinos", "Vinos"),
+        ("i", "ir_inventario", "Inventario"),
         ("q", "quit", "Salir"),
     ]
 
@@ -21,6 +23,9 @@ class CavaApp(App):
 
     def action_ir_vinos(self) -> None:
         self.push_screen(VinosScreen())
+
+    def action_ir_inventario(self) -> None:
+        self.push_screen(InventarioScreen())
 
 if __name__ == "__main__":
     app = CavaApp()
