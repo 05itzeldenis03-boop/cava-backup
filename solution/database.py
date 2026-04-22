@@ -53,3 +53,16 @@ class Database:
             """)
     
         self.conn.commit()
+
+    def get_vinos(self):
+        rows = self.conn.execute("SELECT * FROM vinos").fetchall()
+        return [Vino(
+            id=r["id"],
+            nombre=r["nombre"],
+            tipo=r["tipo"],
+            anio=r["anio"],
+            region=r["region"],
+            bodega=r["bodega"],
+            precio_copa=r["precio_copa"],
+            precio_botella=r["precio_botella"]
+    ) for r in rows]
